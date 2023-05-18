@@ -1,5 +1,5 @@
 {
-    "name": "laravel/my-package",
+    "name": "laravel/testPackage",
     "description": "A simple Laravel package.",
     "version": "1.0.0",
     "authors": [
