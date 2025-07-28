@@ -1,6 +1,14 @@
 {
     "name": "egypt/test-package-ahmed",
     "description": "A simple Laravel package.",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "package",
+        "test"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
     "version": "1.0.0",
     "authors": [
         {
@@ -10,6 +18,5 @@
     ],
     "require": {
         "php": "~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0|~8.0.0",
-        "laravel/framework": "~8.0.0|~9.0.0|~10.0.0"
     }
 }
