@@ -1,22 +1,23 @@
 {
-    "name": "egypt/test-package-ahmed",
-    "description": "A simple Laravel package.",
+    "name": "qit/helper",
+    "description": "A Colactions helper for Laravel",
     "type": "library",
-    "keywords": [
-        "laravel",
-        "package",
-        "test"
-    ],
     "license": "MIT",
-    "minimum-stability": "dev",
     "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Qit\\Helper\\": "src/"
+        }
+    },
     "authors": [
         {
             "name": "Ahmed Saad Hassan",
             "email": "alfker3@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-        "php": "~7.0.0|~7.1.0|~7.2.0|~7.3.0|~7.4.0|~8.0.0"
+        "php": "~8.0.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
     }
 }
