@@ -47,13 +47,6 @@ $slug = HelperGen::generateSlug('Hello World');
 // Output: "Helper: hello-world"
 ```
 
-### Database Migrations
-
-The package includes database migrations that will be automatically loaded when you run:
-
-```bash
-php artisan migrate
-```
 
 ## Features
 

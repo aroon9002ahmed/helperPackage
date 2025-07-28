@@ -4,19 +4,7 @@ namespace Qit\Helper\functions;
 
 class HelperGen
 {
-    /**
-     * Generate a helper function result from a given string.
-     *
-     * @param string $string
-     * @return string
-     */
-    public static function generateSlug($string)
-    {
-        // You can customize this helper function as needed
-        return "Helper: " . \Illuminate\Support\Str::slug($string, '-');
-    }
-
-
+ 
     /**
      * Generate an embedded YouTube video iframe from a given link [Youtube].
      *
