@@ -24,7 +24,7 @@ class HelperGen
         if($iframe) {
             return '<iframe width="'.$width.'" height="'.$height.'" src="https://www.youtube.com/embed/'.$youtube_id.'" title="'.$title.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
         }else{
-            return "<a href='https://www.youtube.com/watch?v=" . $youtube_id . "' target='_blank'>Watch on YouTube new tab 111</a>"; // This will return a clickable link to the YouTube video
+            return "<a href='https://www.youtube.com/watch?v=" . $youtube_id . "' target='_blank'>Watch on YouTube new tab</a>"; // This will return a clickable link to the YouTube video
         }
 
 
