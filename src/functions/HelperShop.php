@@ -11,7 +11,7 @@ class HelperShop
      * @param bool $select Whether to return an array of statuses or a single status name.
      * @return string|array The name of the status or an array of all statuses.
      */
-    public static function getStatusName($statusCode=null, $select = false)
+    public static function getOrderStatusName($statusCode=null, $select = false)
     {
         $statuses = [
             0 => 'Pending',
@@ -27,6 +27,6 @@ class HelperShop
             return $statuses;
         }
 
-        return $statuses[$statusCode] ?? 'Unknown';
+        return $statuses[$statusCode] ?? 'Unknown Status';
     }
 }

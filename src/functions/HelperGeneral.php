@@ -7,7 +7,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 // or use Intervention\Image\Drivers\Imagick\Driver;
 
 
-class HelperGen
+class HelperGeneral
 {
  
     /**
