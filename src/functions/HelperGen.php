@@ -40,6 +40,8 @@ class HelperGen
      *
      * @param string $filename The name of the image file.
      * @param string $path The path where the image is stored.
+     * @param string $cacheFolder The folder where the resized image will be saved.
+     * @param string $smallFolder The folder where the small version of the image will be saved.
      * @param int|null $weight The width to resize the image to, or null to keep original width.
      * @param int|null $height The height to resize the image to, or null to keep original height.
      * @param int|null $smallweight The width for the small version, or null to skip small version.
