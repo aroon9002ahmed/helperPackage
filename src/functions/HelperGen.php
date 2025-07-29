@@ -2,6 +2,11 @@
 
 namespace Qit\Helper\functions;
 
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+// or use Intervention\Image\Drivers\Imagick\Driver;
+
+
 class HelperGen
 {
  
@@ -29,5 +34,33 @@ class HelperGen
 
 
     }
+
+    /**
+     * Resize an image and create a cache and small version of it.
+     *
+     * @param string $filename The name of the image file.
+     * @param string $path The path where the image is stored.
+     * @param int|null $weight The width to resize the image to, or null to keep original width.
+     * @param int|null $height The height to resize the image to, or null to keep original height.
+     * @param int|null $smallweight The width for the small version, or null to skip small version.
+     * @param int|null $smallheight The height for the small version, or null to skip small version.
+     */
+    public static function ImgResize($filename, $path, $weight = null, $height = null, $smallweight = null, $smallheight = null)
+    {
+        $imgManager = new ImageManager(new Driver());
+        $image = $imgManager->read('storage/' . $path . '/' . $filename);
+
+        //create cache image
+        $image->resize($weight, $height);
+        $image->save('storage/' . $path . '/cache/' . $filename);
+
+        if ($smallweight !== null || $smallheight !== null) {
+            //create small image
+            $smallImage = $imgManager->read('storage/' . $path . '/' . $filename);
+            $smallImage->resize($smallweight, $smallheight);
+            $smallImage->save('storage/' . $path . '/small/' . $filename);
+        }
+    }
+
 }
 
