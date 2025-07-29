@@ -45,20 +45,20 @@ class HelperGen
      * @param int|null $smallweight The width for the small version, or null to skip small version.
      * @param int|null $smallheight The height for the small version, or null to skip small version.
      */
-    public static function ImgResize($filename, $path, $weight = null, $height = null, $smallweight = null, $smallheight = null)
+    public static function ImgResize($filename, $path,$cacheFolder='cache',$smallFolder='small', $weight = null, $height = null, $smallweight = null, $smallheight = null)
     {
         $imgManager = new ImageManager(new Driver());
         $image = $imgManager->read('storage/' . $path . '/' . $filename);
 
         //create cache image
         $image->resize($weight, $height);
-        $image->save('storage/' . $path . '/cache/' . $filename);
+        $image->save('storage/' . $path . '/'.$cacheFolder.'/' . $filename);
 
         if ($smallweight !== null || $smallheight !== null) {
             //create small image
             $smallImage = $imgManager->read('storage/' . $path . '/' . $filename);
             $smallImage->resize($smallweight, $smallheight);
-            $smallImage->save('storage/' . $path . '/small/' . $filename);
+            $smallImage->save('storage/' . $path . '/'.$smallFolder.'/' . $filename);
         }
     }
 
