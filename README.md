@@ -14,7 +14,7 @@ You can install the package via Composer:
 composer require qit/helper
 ```
 
-**Note:** This package requires the Intervention Image library for image processing:
+**Note:** This package requires the Intervention Image library for image processing (V3):
 
 ```bash
 composer require intervention/image
