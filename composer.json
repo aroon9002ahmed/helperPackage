@@ -26,7 +26,7 @@
                 "Qit\\Helper\\HelperServiceProvider"
             ],
             "aliases": {
-                "QITHelper": "Qit\\Helper\\Facades\\Helper"
+                "QitHelper": "Qit\\Helper\\Facades\\Helper"
             }
         
         }
