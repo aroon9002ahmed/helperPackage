@@ -9,7 +9,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 class HelperGeneral
 {
- 
+
     /**
      * Generate an embedded YouTube video iframe from a given link [Youtube].
      *
@@ -21,18 +21,16 @@ class HelperGeneral
      * @return string 
      */
 
-    public static function Youtube($link, $width = 560, $height = 315,$title = 'YouTube video player',$iframe = true)
+    public static function Youtube($link, $width = 560, $height = 315, $title = 'YouTube video player', $iframe = true)
     {
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $link, $match);
         $youtube_id = $match[1];
 
-        if($iframe) {
-            return '<iframe width="'.$width.'" height="'.$height.'" src="https://www.youtube.com/embed/'.$youtube_id.'" title="'.$title.'" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-        }else{
-            return "<a href='https://www.youtube.com/watch?v=" . $youtube_id . "' target='_blank'>".$title."</a>"; // This will return a clickable link to the YouTube video
+        if ($iframe) {
+            return '<iframe width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $youtube_id . '" title="' . $title . '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+        } else {
+            return "<a href='https://www.youtube.com/watch?v=" . $youtube_id . "' target='_blank'>" . $title . "</a>"; // This will return a clickable link to the YouTube video
         }
-
-
     }
 
     /**
@@ -47,22 +45,20 @@ class HelperGeneral
      * @param int|null $smallweight The width for the small version, or null to skip small version.
      * @param int|null $smallheight The height for the small version, or null to skip small version.
      */
-    public static function ImgResize($filename, $path,$cacheFolder='cache',$smallFolder='small', $weight = null, $height = null, $smallweight = null, $smallheight = null)
+    public static function ImgResize($filename, $path, $cacheFolder = 'cache', $smallFolder = 'small', $weight = null, $height = null, $smallweight = null, $smallheight = null)
     {
         $imgManager = new ImageManager(new Driver());
-        $image = $imgManager->read('storage/' . $path . '/' . $filename);
+        $image = $imgManager->read($path . '/' . $filename);
 
         //create cache image
         $image->resize($weight, $height);
-        $image->save('storage/' . $path . '/'.$cacheFolder.'/' . $filename);
+        $image->save($path . '/' . $cacheFolder . '/' . $filename);
 
         if ($smallweight !== null || $smallheight !== null) {
             //create small image
-            $smallImage = $imgManager->read('storage/' . $path . '/' . $filename);
+            $smallImage = $imgManager->read($path . '/' . $filename);
             $smallImage->resize($smallweight, $smallheight);
-            $smallImage->save('storage/' . $path . '/'.$smallFolder.'/' . $filename);
+            $smallImage->save($path . '/' . $smallFolder . '/' . $filename);
         }
     }
-
 }
-
